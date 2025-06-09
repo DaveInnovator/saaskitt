@@ -91,7 +91,7 @@ export default function ColdEmailWriter() {
       <h1 className="text-3xl font-bold text-white mb-4">Cold Email Writer</h1>
 
       <textarea
-        className="w-full p-4 rounded bg-gray-800 text-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4"
+        className="w-full p-4 rounded bg-gray-800 text-white resize-none focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4 cursor-pointer"
         rows="6"
         placeholder="Describe your product/service and target audience..."
         value={input}

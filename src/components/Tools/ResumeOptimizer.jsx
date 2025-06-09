@@ -58,7 +58,7 @@ export default function ResumeOptimizer() {
         onChange={(e) => setResumeText(e.target.value)}
       />
 
-      <button className="mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition"
+      <button className="mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition cursor-pointer"
         onClick={handleOptimize}
         disabled={loading || !resumeText.trim()}
         style={{ marginTop: 15, padding: "10px 20px", fontSize: 16 }}
@@ -69,7 +69,7 @@ export default function ResumeOptimizer() {
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {optimizedResume && (
-        <div className="mt-6 bg-gray-900 p-4 rounded-md border border-gray-700 whitespace-pre-wrap"
+        <div className="mt-6 bg-gray-900 p-4 rounded-md border border-gray-700 whitespace-pre-wrap "
         //   style={{
         //     marginTop: 20,
         //     padding: 15,

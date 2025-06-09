@@ -58,7 +58,7 @@ export default function TextSummarizer() {
       <button
         onClick={handleSummarize}
         disabled={loading}
-        className="mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition"
+        className="mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition cursor-pointer"
       >
         {loading ? "Summarizing..." : "Summarize"}
       </button>

@@ -102,7 +102,7 @@ Make it concise, engaging, and tailored to the job.`;
         <button
           type="submit"
           disabled={loading || !jobTitle.trim() || !company.trim() || !yourName.trim()}
-          className={`mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition text-white
+          className={`mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition text-white cursor-pointer
             ${
               loading || !jobTitle.trim() || !company.trim() || !yourName.trim()
                 ? "bg-gray-600 cursor-not-allowed shadow-none"

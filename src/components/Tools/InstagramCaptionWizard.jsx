@@ -110,7 +110,7 @@ Make it catchy and attention-grabbing for IG.`.trim();
         <button
           onClick={handleGenerate}
           disabled={loading || !brand.trim()}
-          className={`mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition text-white ${
+          className={`mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition text-white cursor-pointer ${
             loading || !brand.trim()
               ? "bg-gray-600 cursor-not-allowed"
               : "bg-[#61dafb] hover:bg-[#21a1f1]"

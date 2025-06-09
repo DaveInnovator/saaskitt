@@ -92,14 +92,14 @@ export default function StudyPromptAssistant() {
 
 
   return (
-    <div className="bg-zinc-900 text-white p-6 rounded-2xl shadow-lg max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto bg-gray-900 p-6 rounded-2xl shadow-lg">
       <h2 className="text-2xl font-bold mb-4">📘 Study Prompt Assistant</h2>
 
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Paste or upload text here..."
-        className="w-full bg-zinc-800 p-4 rounded-lg h-48 mb-4 resize-none"
+        className="w-full h-32 p-4 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
       />
 
       <div className="flex items-center gap-4 mb-4">
@@ -115,7 +115,7 @@ export default function StudyPromptAssistant() {
 
         <button
           onClick={summarizeText}
-          className="bg-indigo-600 hover:bg-indigo-500 px-5 py-2 rounded-lg text-white text-sm"
+          className="mt-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 px-5 py-2 rounded-md font-semibold transition cursor-pointer"
           disabled={!text}
         >
           ✨ Summarize
@@ -126,7 +126,7 @@ export default function StudyPromptAssistant() {
         <p className="text-sm text-gray-400">⏳ Generating summary...</p>
       ) : (
         summary && (
-          <div className="bg-zinc-800 p-4 rounded-lg mt-4">
+          <div className="mt-6 bg-gray-900 p-4 rounded-md border border-gray-700 whitespace-pre-wrap">
             <h3 className="font-semibold mb-2">📝 Summary:</h3>
             <p className="text-sm">{summary}</p>
           </div>
