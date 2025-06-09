@@ -53,6 +53,13 @@ export default function Home() {
             <p className="text-gray-400">{desc}</p>
           </motion.div>
         ))}
+        <motion.a
+  href="/tools"
+  whileHover={{ scale: 1.05 }}
+  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition shadow-md"
+>
+  Browse Tools 🚀
+</motion.a>
       </div>
     </div>
   );
