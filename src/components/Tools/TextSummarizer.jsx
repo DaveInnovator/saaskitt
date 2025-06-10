@@ -5,40 +5,40 @@ export default function TextSummarizer() {
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const summarizeWithHuggingFace = async (text) => {
+    const HF_KEY = import.meta.env.VITE_HF_API_TOKEN;
+    if (!HF_KEY) throw new Error("Missing Hugging Face API key");
+
+    const response = await fetch("https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${HF_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ inputs: text }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.error || "Summarization failed");
+    }
+
+    const data = await response.json();
+    return data[0]?.summary_text || "No summary generated.";
+  };
+
   const handleSummarize = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || loading) return;
 
     setLoading(true);
     setSummary("");
 
     try {
-      const token = import.meta.env.VITE_HF_API_TOKEN;
-      if (!token) throw new Error("API token missing. Check your .env file.");
-
-      const response = await fetch(
-        "https://api-inference.huggingface.co/models/facebook/bart-large-cnn",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ inputs: input }),
-        }
-      );
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to summarize");
-      }
-
-      const data = await response.json();
-
-      // Hugging Face returns array with generated_text
-      const generated = data[0]?.summary_text || data[0]?.generated_text || "";
-      setSummary(generated || "No summary returned");
-    } catch (error) {
-      setSummary(`⚠️ ${error.message}`);
+      const result = await summarizeWithHuggingFace(input);
+      setSummary(result);
+    } catch (err) {
+      console.warn("Summarization failed:", err);
+      setSummary(`⚠️ ${err.message}`);
     } finally {
       setLoading(false);
     }

@@ -61,7 +61,7 @@ export default function StudyPromptAssistant() {
   setLoading(true);
   setSummary('');
   try {
-    const response = await fetch("https://api-inference.huggingface.co/models/facebook/bart-large-cnn", {
+    const response = await fetch("https://api-inference.huggingface.co/models/sshleifer/distilbart-cnn-12-6", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${HUGGING_FACE_API_URL}`,
