@@ -11,7 +11,7 @@ import CoverLetterGeneratorPage from "./pages/CoverLetterGenerator";
 import ColdEmailWriterPage from "./pages/ColdEmailWriterPage";
 import InstagramCaptionWizardPage from "./pages/InstagramCaptionWizard";
 import StudentPromptAssistantPage from "./pages/StudyPromptAssistant";
-import { Analytics } from "@vercel/analytics/next"
+
 // import PricingPage from "./pages/Pricing";
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
         </main>
         <Footer />
       </div>
-      <Analytics />
+     
     </>
   );
 }
