@@ -31,14 +31,14 @@ export default function Footer() {
         </div>
 
         <div className="flex space-x-6">
-          {/* Replace with real icons if you want */}
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+          
+          <a href="https://x.com/DavidOlarinde2?t=sygxBvtoIQgTnOUXepSvWA&s=09" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
             Twitter
           </a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
             GitHub
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
+          <a href="https://www.linkedin.com/in/david-olanrewaju-b98270370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
             LinkedIn
           </a>
         </div>
